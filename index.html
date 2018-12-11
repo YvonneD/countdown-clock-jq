@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<![endif]-->
+    <title>countdown clock jq</title>
+    <meta name="description" content="2019 new year countdown clock with jq">
+    <meta name="keywords" content="countdown">
+    <meta name="author" content="Yifang Di">
+    <link href="style/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+</head>
+
+<body>
+    <div class="mask"></div>
+    <div class="container">
+        <div class="title">
+            <img class="animated bounceInDown" src="images/2019-Gold.png" alt="2019">
+    	</div>
+            <div id="clock"></div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="js/jquery.countdown.min.js"></script>
+        <script type="text/javascript">
+        $('#clock').countdown('2019/01/01', function(event) {
+            var $this = $(this).html(event.strftime('' +
+                '<span>%w</span> Weeks' +
+                '<span>%d</span> Days' +
+                '<span>%H</span> Hours' +
+                '<span>%M</span> Minutes' +
+                '<span>%S</span> Seconds'
+            ))
+        })
+        </script>
+</body>
+
+</html>
